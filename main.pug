@@ -1,0 +1,69 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  title OEDIV CALL
+  link(rel='stylesheet', href='css/main.css')
+  link(rel="preconnect" href="https://fonts.googleapis.com")
+  link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+  link(href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Lobster+Two:ital@1&family=Special+Elite&display=swap" rel="stylesheet")
+  script(src="https://code.jquery.com/jquery-3.6.0.js")
+body 
+  #navbar 
+    h1 OEDIV CALL
+      img#logo(src="imgs/logo.png", alt="LOGO", style="float:left;margin-bottom:5px")
+    button#create CREATE ROOM
+    button#hopin(onclick="location.href='room'")    HOP IN  
+  img#intro(src="imgs/intro.jpg", alt="INTRO" height="500px") 
+  #wrapper
+    #about 
+      h2 WHAT IS OEDIV CALL ABOUT?
+      br
+      p OEDIO CALL is just like other platforms used for conducting video call conferences or fun meets 
+      p What's special about us is that we are super user friendly and secure.
+      p You can create or join rooms by just a single click and just by sending us few datas.
+      p We also support chat options in the room so that incase you aren't in a position to speak, just start chatting.
+      p The room codes are randomized by our special code and thus they are difficult to decode, meaning that the room you created can be accessed only by you and people with whom you share the code.
+    img#aboutimg(src="imgs/about.png", alt="ABOUT" )
+    #how 
+      h2 HOW TO USE OEDIV CALL?
+      br
+      p OEDIV CALL is very easy to use and understand it's mechanism
+      p Use the CREATE ROOM button to host a room, whose room id can be later shared to other people you would like to invite
+      p Use the HOP IN button to join the room you desire
+      p Make sure you provide your name whenever asked
+      p Note that as soon as you enter the room, both your camera and mic would be on. Turn it off if you do not want to show your beatiful face to others
+      p Technically that's it. As Simple As That
+    #why 
+      h2 WHY OEDIV CALL?
+      br
+      p The reason is simple, OEDIV CALL .... is simple 
+      p We provide services that are absolutely free. Every option that is ever available in this site, is free 
+      p We have a good service team. Incase the site suddenly crashes, our team will make sure the problem is fixed ASAP
+      p Since our layouts, codes, server-client connections etc are simple, this site runs flawlessly in most of the famous browsers, meaning its as smooth as a butter
+    img#whyimg(src="imgs/why.png", alt="WHY?")
+    #details
+      h2 FOR FURTHER DETAILS AND QUERIES
+      br
+      p Contact 
+      p Mobile number: +91 9876543210
+      p E-mail: askoediv@nitt.edu
+    img#detailsimg(src="imgs/details.png", alt="DETAILS")
+footer
+  p MADE WITH
+    span 
+      img#foot(src="imgs/logo.png", alt="LOGO")
+      span BY OEDIV CALL
+  script.
+    const navbar = document.getElementById("navbar");
+    const down = navbar.offsetTop;
+    window.onscroll = ()=>{
+      if(window.pageYOffset >= down)
+      {
+        navbar.classList.add("down");
+      }
+      else 
+      {
+        navbar.classList.remove("down");
+      }
+    }
