@@ -8,12 +8,22 @@ app.use(express.static('public'));
 app.set('view engine', 'pug');
 
 app.get('/',(req,res)=>{
-res.render('main');
+let id = uuidV4();
+res.render('main',{roomId: id});
 });
-app.get('/room',(req,res)=>{
-res.render('room');
+app.get('/:room',(req,res)=>{
+res.render('room',{roomId: req.params.room});
 });
-
+io.on('connection', (socket)=>{
+    socket.on('join-room',(roomId, userId)=>{
+    socket.join(roomId)
+    socket.broadcast.to(roomId).emit('user-connected',userId)
+    
+    socket.on('disconnect',()=>{
+        socket.broadcast.to(roomId).emit('user-disconnected',userId)
+    })
+    })
+    })
 server.listen(3000,()=>{
     console.log("PORT set in 3000");
 });

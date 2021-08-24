@@ -15,13 +15,20 @@ body
   #stream
   #butnav
     button#cam
+      i(class="fas fa-video")
     button#mic 
+      i(class="fas fa-microphone-slash")
     button#invite
-    button#chat 
+      i(class="fas fa-user-plus")
+    button#scshare 
+      i(class="fas fa-rss")
+    button#chat
+      i(class="fas fa-comment-alt")
   #chatbar 
 
-  script(src='/socket.io/socket.io.js')
-  script(src='https://kit.fontawesome.com/c939d0e917.js')
-  script(src='https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js')
   script.
     const ROOM_ID = "#{roomId}";
+  script(defer, src='/socket.io/socket.io.js')
+  script(defer, src='https://kit.fontawesome.com/c939d0e917.js')
+  script(defer, src='https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js')
+  script(defer, src='script/room.js')

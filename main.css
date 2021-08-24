@@ -16,6 +16,9 @@ body{
     box-shadow: 0 0 10px 10px rgba(114, 113, 113,0.3);
     overflow:unset;
     font-family: 'Black Ops One', cursive;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
 }
 #navbar .down{
     position: fixed;
